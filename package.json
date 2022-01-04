@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/Robbiekruszynski/bd_discord_bot#readme",
   "dependencies": {
-    "discord.js": "^13.5.0",
+    "discord.js": "^12.5.3",
     "dotenv": "^10.0.0"
   }
 }
