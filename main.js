@@ -33,8 +33,8 @@ client.on('message', message => {
     if (command == "bdu"){
         client.commands.get("bdu").execute(message,args);
     }else if (command =="ethdocs"){
-        client.commands.get("ethereum").execute(message,args);
-        }
+        client.commands.get("ethereumdocs").execute(message,args);
+    }
     
 });
 
