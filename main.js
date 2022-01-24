@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client({partials: ["MESSAGE", "CHANNEL", "REACTION"]});
 const fs = require('fs');
+const { removeAllListeners } = require('process');
 require('dotenv').config();
 
 client.commands = new Discord.Collection();
@@ -31,7 +32,10 @@ client.on('message', message => {
 
     if (command == "bdu"){
         client.commands.get("bdu").execute(message,args);
-    }
+    }else if (command =="ethdocs"){
+        client.commands.get("ethereum").execute(message,args);
+        }
+    
 });
 
 
@@ -40,3 +44,10 @@ client.on('message', message => {
 
 //keep at bottom
 client.login(process.env.TOKEN);
+
+
+// ??command can happen in X value 
+// however it points to the right channel 
+// if they DO have they roll, then it still points (faster) 
+// otherwise it points to the main channel 
+
