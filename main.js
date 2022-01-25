@@ -3,6 +3,8 @@ const client = new Discord.Client({partials: ["MESSAGE", "CHANNEL", "REACTION"]}
 const fs = require('fs');
 const { removeAllListeners } = require('process');
 require('dotenv').config();
+const { MessageEmbed } = require('discord.js');
+
 
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
@@ -31,11 +33,13 @@ client.on('message', message => {
     // }
 
     if (command == "bdu"){
-        client.commands.get("bdu").execute(message,args);
+        client.commands.get("bdu").execute(message,args, Discord);
     }else if (command =="ethdocs"){
-        client.commands.get("ethereumdocs").execute(message,args);
+        client.commands.get("ethereumdocs").execute(message,args, Discord);
+    }else if (command == 'embed'){
+        client.commands.get("embed").execute(message,args, Discord);
     }
-    
+
 });
 
 
