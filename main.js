@@ -34,10 +34,10 @@ client.on('message', message => {
 
     if (command == "bdu"){
         client.commands.get("bdu").execute(message,args, Discord);
-    }else if (command =="ethdocs"){
+    }else if (command =="eth"){
         client.commands.get("ethereumdocs").execute(message,args, Discord);
-    }else if (command == 'embed'){
-        client.commands.get("embed").execute(message,args, Discord);
+    }else if (command == 'ethdocs'){
+        client.commands.get("ethdocs").execute(message,args, Discord);
     }
 
 });
@@ -54,4 +54,3 @@ client.login(process.env.TOKEN);
 // however it points to the right channel 
 // if they DO have they roll, then it still points (faster) 
 // otherwise it points to the main channel 
-
